@@ -1,0 +1,23 @@
+:host{
+	display: block;
+	height: 100vh;
+	width: 100vw;
+	padding: 0;
+	margin: 0;
+}
+
+
+.fab{
+	right: 20px;
+	bottom: 20px;
+	position: fixed !important;
+}
+ 
+.mat-sidenav-container, .mat-sidenav-content {
+	transform: none !important;
+}
+
+.sidebarFlyoutContainer {
+	max-width: 70vw;
+}
+  

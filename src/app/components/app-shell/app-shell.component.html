@@ -1,0 +1,25 @@
+<mat-sidenav-container (backdropClick)="closeSidebar()" [hasBackdrop]="true">
+	<mat-sidenav #sideNavMenu fixedInViewport (keydown.escape)="closeSidebar()" disableClose class="sidebarFlyoutContainer">
+		<app-sidebar-content />
+	</mat-sidenav>
+
+	<mat-sidenav-content>
+		@if(showAppTitleBar){
+			<mat-toolbar>
+				<button mat-icon-button aria-label="Menu button" (click)="openSidebar()">
+					<mat-icon>menu</mat-icon>
+				</button>
+		
+				<span>Dashboard</span>
+			</mat-toolbar>
+		}
+
+		<ng-content></ng-content>
+
+		@if(showFab && fabOnClick){
+			<button mat-fab class="fab" aria-label="Floating Action Button">
+				<mat-icon>add</mat-icon>
+			</button>
+		}
+	</mat-sidenav-content>
+</mat-sidenav-container>
