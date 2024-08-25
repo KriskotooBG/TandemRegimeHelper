@@ -1,0 +1,15 @@
+.calendarContainer{
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	width: 100%;
+}
+
+.cell{
+	border: 1px solid blue;
+	display: inline-block;
+	text-align: center;
+}
+
+.nextMonthCell, .prevMonthCell {
+	color: #555555;
+}

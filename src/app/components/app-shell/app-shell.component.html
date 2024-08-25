@@ -1,16 +1,16 @@
-<mat-sidenav-container (backdropClick)="closeSidebar()" [hasBackdrop]="true">
+<mat-sidenav-container (backdropClick)="closeSidebar()" [hasBackdrop]="true" class="contentContainer">
 	<mat-sidenav #sideNavMenu fixedInViewport (keydown.escape)="closeSidebar()" disableClose class="sidebarFlyoutContainer">
 		<app-sidebar-content />
 	</mat-sidenav>
 
-	<mat-sidenav-content>
+	<mat-sidenav-content class="contentContainer">
 		@if(showAppTitleBar){
 			<mat-toolbar>
 				<button mat-icon-button aria-label="Menu button" (click)="openSidebar()">
 					<mat-icon>menu</mat-icon>
 				</button>
 		
-				<span>Dashboard</span>
+				<span>{{ appBarTitle }}</span>
 			</mat-toolbar>
 		}
 

@@ -1,0 +1,18 @@
+<input type="number" (input)="setSelectedMonth($event)">
+<div class="calendarContainer">
+	@for(weekDayName of ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; track weekDayName){
+		<div class="cell headerCell">{{ weekDayName }}</div>
+	}
+
+	@for(day of countStartFillerDays | times; track $index){
+		<div class="cell prevMonthCell">{{ startFillerDay + $index }}</div>
+	}
+
+	@for(day of countDaysMonth | times; track $index){
+		<div class="cell currentMonthCell">{{ $index + 1 }}</div>
+	}
+
+	@for(day of (7 - ((countDaysMonth + countStartFillerDays) % 7)) | times; track $index){
+		<div class="cell nextMonthCell">{{ $index + 1 }}</div>
+	}
+</div>

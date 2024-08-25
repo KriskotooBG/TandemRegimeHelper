@@ -20,6 +20,9 @@ export class AppShellComponent {
 	showAppTitleBar: boolean = true;
 
 	@Input()
+	appBarTitle: string = "";
+
+	@Input()
 	showFab: boolean = true;
 
 	@Input()
