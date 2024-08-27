@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TimesPipe } from '../../../../pipes/times.pipe';
+import { CommonModule } from '@angular/common';
 
 export enum CellType{
 	previousMonth,
@@ -25,7 +26,7 @@ export class CalendarCell{
 @Component({
   selector: 'app-month-view',
   standalone: true,
-  imports: [ TimesPipe ],
+  imports: [ TimesPipe, CommonModule ],
   templateUrl: './month-view.component.html',
   styleUrl: './month-view.component.scss'
 })
@@ -43,7 +44,7 @@ export class MonthViewComponent {
 	private workingDateObject: Date = new Date();
 
 
-	
+
 	constructor(){
 		this.calculateCalendarDays()
 	}

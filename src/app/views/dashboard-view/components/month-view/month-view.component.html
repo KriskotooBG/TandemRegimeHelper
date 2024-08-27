@@ -4,15 +4,15 @@
 		<div class="cell headerCell">{{ weekDayName }}</div>
 	}
 
-
 	@for(cell of cellData; track cell){
 		<div 
-			class="cell"
-			[attr.data-id]="cell.getId()"
-			[class.currentMonth]="cell.type == CellType.currentMonth"
-			[class.prevMonthCell]="cell.type == CellType.previousMonth"
-			[class.nextMonthCell]="cell.type == CellType.nextMonth"
-			[class.currentDay]="cell.isToday"
-			>{{ cell.day }}</div>
+		class="cell"
+        [attr.data-id]="cell.getId()"
+        [ngClass]="{
+            'currentMonth': cell.type === CellType.currentMonth,
+            'prevMonthCell': cell.type === CellType.previousMonth,
+            'nextMonthCell': cell.type === CellType.nextMonth,
+            'currentDay': cell.isToday
+        }">{{ cell.day }}</div>
 	}
 </div>
