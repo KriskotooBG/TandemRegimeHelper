@@ -4,15 +4,15 @@
 		<div class="cell headerCell">{{ weekDayName }}</div>
 	}
 
-	@for(day of countStartFillerDays | times; track $index){
-		<div class="cell prevMonthCell">{{ startFillerDay + $index }}</div>
-	}
 
-	@for(day of countDaysMonth | times; track $index){
-		<div class="cell currentMonthCell">{{ $index + 1 }}</div>
-	}
-
-	@for(day of (7 - ((countDaysMonth + countStartFillerDays) % 7)) | times; track $index){
-		<div class="cell nextMonthCell">{{ $index + 1 }}</div>
+	@for(cell of cellData; track cell){
+		<div 
+			class="cell"
+			[attr.data-id]="cell.getId()"
+			[class.currentMonth]="cell.type == CellType.currentMonth"
+			[class.prevMonthCell]="cell.type == CellType.previousMonth"
+			[class.nextMonthCell]="cell.type == CellType.nextMonth"
+			[class.currentDay]="cell.isToday"
+			>{{ cell.day }}</div>
 	}
 </div>

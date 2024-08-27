@@ -8,8 +8,23 @@
 	border: 1px solid blue;
 	display: inline-block;
 	text-align: center;
+	position: relative;
 }
 
 .nextMonthCell, .prevMonthCell {
 	color: #555555;
+}
+
+.currentDay::before{
+	content: " ";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background-color: #cf00cf;
+	z-index: -1;
+	transform: translate(-50%, -50%);
 }
